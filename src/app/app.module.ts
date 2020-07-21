@@ -10,14 +10,16 @@ import { MaterialModule } from './material.module';
 import { MyAppComponent } from './my-app/my-app.component';
 import { PublishStoryComponent } from './publish-story/publish-story.component';
 import { TemplatesComponent } from './templates/templates.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component'
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { LoginComponent } from './login/login.component'
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
 const appRoutes: Routes = [
   { path: 'my-app', component: MyAppComponent},
   { path: 'publish-story', component: PublishStoryComponent},
   { path: 'templates', component: TemplatesComponent},
-  { path: 'admin-panel', component: AdminPanelComponent}
+  { path: 'admin-panel', component: AdminPanelComponent},
+  { path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     MyAppComponent,
     PublishStoryComponent,
     TemplatesComponent,
-    AdminPanelComponent
+    AdminPanelComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
