@@ -1,0 +1,43 @@
+.menu-top-bar {
+  background: #000
+}
+
+.left-sidebar .app-brand {
+  background: #3e3e3e;
+  font-size: 33px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.left-sidebar .app-brand > span {
+  flex: 1 1 auto;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 260px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+  border-right-width : 0px;
+}
+
+.icon-display {
+  transform: scale(1.8);
+}
+
+.arrow-dropdown {
+  transform: scale(1.5);
+}
+
+span.login-name {color: #fff; font-size: 14px;line-height: 22px; padding: 15px;}
+span.login-name .user-name{color: #e57c20}
+.active-list-item {
+  color: #fc7700 !important; 
+}
+.router-container {
+  height: calc(100vh - 104px);
+  margin: 20px;
+}
