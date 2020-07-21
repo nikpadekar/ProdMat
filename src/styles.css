@@ -25,3 +25,8 @@ body {
   background: #fff !important;
   color: #e57c20 !important;
 }
+:focus {outline-width:0;}
+.mat-orange {
+    background: #fc7700;
+    color: #fff;
+}

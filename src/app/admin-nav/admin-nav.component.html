@@ -39,14 +39,14 @@
       </button>
       <!-- <span>Application Title</span> -->
       <span class="spacer"></span>
-      <button mat-icon-button>
-        <mat-icon class="icon-display">person</mat-icon>
+      <button mat-icon-button class="icon-display">
+        <mat-icon>person</mat-icon>
       </button>
-      <span class="login-name ml-3 ">Welcome<br><span class="user-name">Paing Turner</span></span>
-      <p *ngIf="(isHandset | async)!.matches ? false : true">
+      <span class="login-name">Welcome<br><span class="user-name">Paing Turner</span></span>
+      <div *ngIf="(isHandset | async)!.matches ? false : true">
         <span class="fill-remaining-space">
-          <button mat-icon-button [matMenuTriggerFor]="account" #menuTrigger="matMenuTrigger" (click)="menuTrigger.openMenu()">
-            <mat-icon class="arrow-dropdown">arrow_drop_down</mat-icon>
+          <button mat-icon-button class="arrow-dropdown" [matMenuTriggerFor]="account" #menuTrigger="matMenuTrigger" (click)="menuTrigger.openMenu()">
+            <mat-icon>arrow_drop_down</mat-icon>
           </button>
           <mat-menu #account="matMenu" [overlapTrigger]="false">
           <span (mouseleave)="menuTrigger.closeMenu()">
@@ -65,7 +65,7 @@
           </span>
           </mat-menu>
         </span>
-      </p>
+      </div>
     </mat-toolbar>
     <div class="router-container">
       <router-outlet></router-outlet>

@@ -10,8 +10,9 @@ import { MaterialModule } from './material.module';
 import { MyAppComponent } from './my-app/my-app.component';
 import { PublishStoryComponent } from './publish-story/publish-story.component';
 import { TemplatesComponent } from './templates/templates.component';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { LoginComponent } from './login/login.component'
+import { AdminPanelComponent } from './admin-panel/admin-panel.component'
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
 const appRoutes: Routes = [
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(appRoutes),
     LayoutModule,
-    MaterialModule
+    MaterialModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
