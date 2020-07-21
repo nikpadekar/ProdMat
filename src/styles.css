@@ -1,13 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .spacer {
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 .mat-flex {
-    display: flex;
+  display: flex;
 }
 .highlight-orange {
-    color: #e57c20
+  color: #e57c20;
+}
+.full-width-field {
+  width: 100%;
+}
+.btn-custom-white {
+  padding: 0.3rem 0 !important;
+  background: #fff !important;
+  color: #e57c20 !important;
 }
