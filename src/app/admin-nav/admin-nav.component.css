@@ -19,16 +19,12 @@
 }
 
 .sidenav {
-  width: 260px;
+  width: 210px;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
   border-right-width : 0px;
 }
 
-.icon-display {
-  transform: scale(1.8);
-}
-
-.arrow-dropdown {
+.icon-display,.arrow-dropdown {
   transform: scale(1.5);
 }
 
@@ -38,6 +34,6 @@ span.login-name .user-name{color: #e57c20}
   color: #fc7700 !important; 
 }
 .router-container {
-  height: calc(100vh - 104px);
-  margin: 20px;
+  min-height: calc(100vh - 104px);
+  margin: 15px 0px;
 }

@@ -5,3 +5,15 @@
     justify-content: center;
     align-items: center;
 }
+.image-container {
+    padding: 16px 0;
+}
+.image-carousel {
+    display: block;
+    height:auto;
+    width: 100%;
+}
+.footer-section button{
+    margin-left: .5rem;
+    margin-top: .5rem;
+}
