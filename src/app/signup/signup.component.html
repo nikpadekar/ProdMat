@@ -9,12 +9,21 @@
           <mat-card-content>
             <form class="my-form">
               <mat-form-field class="full-width-field">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Full Name" name="full_name" />
+              </mat-form-field>
+              <mat-form-field class="full-width-field">
                 <mat-label>Email</mat-label>
                 <input matInput placeholder="Email" name="email" />
               </mat-form-field>
               <mat-form-field class="full-width-field">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" name="password" />
+                <input matInput placeholder="Password" name="pass" />
+                <mat-icon matSuffix>remove_red_eye</mat-icon>
+              </mat-form-field>
+              <mat-form-field class="full-width-field">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput placeholder="Confirm Password" name="conf_pass" />
                 <mat-icon matSuffix>remove_red_eye</mat-icon>
               </mat-form-field>
             </form>
@@ -26,17 +35,14 @@
                   mat-button
                   class="btn btn-custom-white btn-block btn-lg btn-custom"
                 >
-                  LOGIN
+                  SIGN UP
                 </button>
               </mat-card-actions>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 text-left">
-              <a [routerLink]="['/forgot-password']" class="theme-link">Forgot Password?</a>
-            </div>
-            <div class="col-md-6 text-right">
-              <a [routerLink]="['/signup']" class="theme-link">New User?</a>
+            <div class="col-md-12 text-left">
+              <a [routerLink]="['/login']" class="theme-link">Back to login</a>
             </div>
           </div>
         </mat-card>

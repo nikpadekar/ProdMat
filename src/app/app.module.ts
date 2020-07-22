@@ -10,17 +10,22 @@ import { MaterialModule } from './material.module';
 import { MyAppComponent } from './my-app/my-app.component';
 import { PublishStoryComponent } from './publish-story/publish-story.component';
 import { TemplatesComponent } from './templates/templates.component';
-import { LoginComponent } from './login/login.component'
-import { AdminPanelComponent } from './admin-panel/admin-panel.component'
+import { LoginComponent } from './login/login.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
+import { SignupComponent } from './signup/signup.component';
+import { ModifyAppComponent } from './modals/modify-app/modify-app.component';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
 const appRoutes: Routes = [
-  { path: 'my-app', component: MyAppComponent},
-  { path: 'publish-story', component: PublishStoryComponent},
-  { path: 'templates', component: TemplatesComponent},
-  { path: 'admin-panel', component: AdminPanelComponent},
-  { path: 'login', component: LoginComponent}
+  { path: 'my-app', component: MyAppComponent },
+  { path: 'publish-story', component: PublishStoryComponent },
+  { path: 'templates', component: TemplatesComponent },
+  { path: 'admin-panel', component: AdminPanelComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPassComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({
@@ -31,7 +36,10 @@ const appRoutes: Routes = [
     PublishStoryComponent,
     TemplatesComponent,
     AdminPanelComponent,
-    LoginComponent
+    LoginComponent,
+    ForgotPassComponent,
+    SignupComponent,
+    ModifyAppComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +47,9 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     LayoutModule,
     MaterialModule,
-    CarouselModule
+    CarouselModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
