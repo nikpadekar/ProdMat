@@ -15,7 +15,7 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { SignupComponent } from './signup/signup.component';
-import { ModifyAppComponent } from './modify-app/modify-app.component';
+import { ModifyAppComponent } from './modals/modify-app/modify-app.component';
 // import { FlexLayoutModule } from '@angular/flex-layout';
 
 const appRoutes: Routes = [
