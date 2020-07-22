@@ -17,3 +17,10 @@
     margin-left: .5rem;
     margin-top: .5rem;
 }
+.full-width {
+    width: 100%;
+}
+.close-icon {
+    margin-top: -20px;
+    margin-right: -10px;
+}

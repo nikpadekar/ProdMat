@@ -42,6 +42,7 @@ body {
 :focus {
   outline-width: 0;
 }
+:focus {outline-width:0 !important}
 .mat-orange {
   background: #fc7700;
   color: #fff;
