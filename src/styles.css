@@ -8,6 +8,12 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+.main-bg-color {
+  background: #f7790a;
+}
+.bg-dark {
+  background: #000 !important;
+}
 .spacer {
   flex: 1 1 auto;
 }
@@ -24,9 +30,34 @@ body {
   padding: 0.3rem 0 !important;
   background: #fff !important;
   color: #e57c20 !important;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 16px !important;
+  border-radius:0 !important
 }
-:focus {outline-width:0;}
+.btn-custom-white:hover {
+  background: #e57c20 !important;
+  color: #fff !important;
+}
+:focus {
+  outline-width: 0;
+}
 .mat-orange {
-    background: #fc7700;
-    color: #fff;
+  background: #fc7700;
+  color: #fff;
+}
+.theme-link {
+  color: #e57c20;
+  text-decoration: none !important;
+}
+
+.form-wrapper .ng-star-inserted,
+.form-wrapper mat-icon {
+  color: #636363;
+}
+.form-wrapper .mat-input-element {
+  color: #fff !important;
+}
+.form-wrapper .mat-form-field-infix input {
+  color: #fff !important;
 }

@@ -1,19 +1,27 @@
 .title-center {
-    font-weight: 500;
-    font-size: 22px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  font-weight: 500;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .image-container {
-    padding: 16px 0;
+  padding: 16px 0;
 }
 .image-carousel {
-    display: block;
-    height:auto;
-    width: 100%;
+  display: block;
+  height: auto;
+  width: 100%;
 }
-.footer-section button{
-    margin-left: .5rem;
-    margin-top: .5rem;
+.footer-section button {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+.button-group button {
+  padding: 0 0.5rem 0 0.2rem;
+  text-align: center;
+  margin: 0 5px !important;
+}
+.button-group button:focus {
+  outline: none;
 }
