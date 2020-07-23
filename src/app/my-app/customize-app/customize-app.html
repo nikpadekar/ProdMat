@@ -1,69 +1,106 @@
 <section class="mat-flex mb-2">
-    <div class="title-center">Modify App</div>
-    <span class="spacer"></span>
-    <button mat-button matSuffix mat-icon-button class="close-icon" (click)="onClose()">
-        <mat-icon>close</mat-icon>
-    </button>
+  <div class="title-center">Modify App</div>
+  <span class="spacer"></span>
+  <button
+    mat-button
+    matSuffix
+    mat-icon-button
+    class="close-icon"
+    (click)="onClose()"
+  >
+    <mat-icon>close</mat-icon>
+  </button>
 </section>
 <div>
-    <mat-divider></mat-divider>
-    <div class="image-container">
-        <div class="row">
-            <div class="col-lg-3">
-                <form>
-                    <mat-form-field class="full-width">
-                        <mat-label>App Name</mat-label>
-                        <input matInput>
-                    </mat-form-field>
-                    <mat-form-field class="full-width">
-                        <mat-label>App Logo</mat-label>
-                        <input matInput>
-                        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-                            <mat-icon>vertical_align_top</mat-icon>
-                        </button>
-                    </mat-form-field>
-                    <mat-form-field class="full-width">
-                        <mat-label>Loading Image</mat-label>
-                        <input matInput>
-                        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-                            <mat-icon>vertical_align_top</mat-icon>
-                        </button>
-                    </mat-form-field>
-                    <mat-form-field class="full-width">
-                        <mat-label>App Primary Color</mat-label>
-                        <input matInput type="color" [(ngModel)]="colorValue1">
-                        <button mat-button *ngIf="colorValue1" matSuffix mat-icon-button aria-label="Clear"
-                            (click)="colorValue1=''">
-                            <mat-icon>close</mat-icon>
-                        </button>
-                    </mat-form-field>
-                    <mat-form-field class="full-width">
-                        <mat-label>App Secondary Colort</mat-label>
-                        <input matInput type="color" [(ngModel)]="colorValue2">
-                        <button mat-button *ngIf="colorValue2" matSuffix mat-icon-button aria-label="Clear"
-                            (click)="colorValue2=''">
-                            <mat-icon>close</mat-icon>
-                        </button>
-                    </mat-form-field>
-                    <button mat-flat-button color="orange" class="float-right">
-                        Publish
-                    </button>
-                </form>
-            </div>
-            <div class="col-lg-9">
-                    <carousel [showIndicators]="false">
-                        <slide>
-                            <img src="https://dummyimage.com/991x550" class="image-carousel">
-                        </slide>
-                        <slide>
-                            <img src="https://dummyimage.com/991x550" class="image-carousel">
-                        </slide>
-                        <slide>
-                            <img src="https://dummyimage.com/991x550" class="image-carousel">
-                        </slide>
-                    </carousel>
-            </div>
-        </div>
-        <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
+  <div class="image-container">
+    <div class="row">
+      <div class="col-lg-3">
+        <form class="template-form">
+          <mat-form-field class="full-width">
+            <mat-label>App Name</mat-label>
+            <input matInput />
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>App Logo</mat-label>
+            <input matInput />
+            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>vertical_align_top</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>Loading Image</mat-label>
+            <input matInput />
+            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon>vertical_align_top</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field class="full-width">
+            <mat-label>App Primary Color</mat-label>
+            <input matInput type="color" [(ngModel)]="colorValue1" />
+            <button
+              mat-button
+              *ngIf="colorValue1"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="colorValue1=''"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <!-- <mat-form-field class="full-width">
+            <mat-label>App Secondary Color</mat-label>
+            <input matInput type="color" [(ngModel)]="colorValue2" />
+            <button
+              mat-button
+              *ngIf="colorValue2"
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              (click)="colorValue2=''"
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field> -->
+          <div class="color-picker">
+            <ngx-colors
+              ngx-colors-trigger
+              [(ngModel)]="colorValue2"
+            ></ngx-colors>
+            <mat-form-field>
+              <input matInput [(ngModel)]="colorValue2" />
+              <button
+                mat-button
+                *ngIf="colorValue2"
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                (click)="colorValue2=''"
+              >
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <button mat-flat-button color="orange" class="float-right">
+            Publish
+          </button>
+        </form>
+      </div>
+      <div class="col-lg-9">
+        <carousel [showIndicators]="false">
+          <slide>
+            <img src="https://dummyimage.com/991x550" class="image-carousel" />
+          </slide>
+          <slide>
+            <img src="https://dummyimage.com/991x550" class="image-carousel" />
+          </slide>
+          <slide>
+            <img src="https://dummyimage.com/991x550" class="image-carousel" />
+          </slide>
+        </carousel>
+      </div>
     </div>
+    <mat-divider></mat-divider>
+  </div>
 </div>

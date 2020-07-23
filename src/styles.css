@@ -33,7 +33,7 @@ body {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 16px !important;
-  border-radius:0 !important
+  border-radius: 0 !important;
 }
 .btn-custom-white:hover {
   background: #e57c20 !important;
@@ -42,7 +42,9 @@ body {
 :focus {
   outline-width: 0;
 }
-:focus {outline-width:0 !important}
+:focus {
+  outline-width: 0 !important;
+}
 .mat-orange {
   background: #fc7700;
   color: #fff;
@@ -61,4 +63,11 @@ body {
 }
 .form-wrapper .mat-form-field-infix input {
   color: #fff !important;
+}
+.color-picker .app-color-picker {
+  display: inline-block;
+}
+
+.template-form .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent;
 }

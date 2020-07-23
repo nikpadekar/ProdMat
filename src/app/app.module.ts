@@ -14,12 +14,14 @@ import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ForgotPassComponent } from './forgot-pass/forgot-pass.component';
 import { SignupComponent } from './signup/signup.component';
+import { AssignUserRightsComponent } from './assign-user-rights/assign-user-rights.component';
 
 import {
   TemplatesComponent,
   CustomizeTemplateDialog,
 } from './templates/templates.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { NgxColorsModule } from 'ngx-colors';
 
 const appRoutes: Routes = [
   {
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
     SignupComponent,
     CustomizeTemplateDialog,
     CustomizeAppDialog,
+    AssignUserRightsComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +62,7 @@ const appRoutes: Routes = [
     LayoutModule,
     MaterialModule,
     CarouselModule,
+    NgxColorsModule,
   ],
   providers: [
     {
