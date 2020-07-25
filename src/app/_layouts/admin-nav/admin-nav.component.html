@@ -5,28 +5,43 @@
     fixedInViewport="true"
     [attr.role]="isHandset ? 'dialog' : 'navigation'"
     [mode]="(isHandset | async)!.matches ? 'over' : 'side'"
-    [opened]="!(isHandset | async)!.matches">
-    <mat-toolbar color="primary" class="app-brand"> <span>NoCodeApp</span></mat-toolbar>
+    [opened]="!(isHandset | async)!.matches"
+  >
+    <mat-toolbar color="primary" class="app-brand">
+      <span>NoCodeApp</span></mat-toolbar
+    >
     <mat-nav-list>
       <a mat-list-item routerLink="my-app" routerLinkActive="active-list-item">
         <mat-icon mat-list-icon>apps</mat-icon>
-        <h4 mat-line >My App</h4>
+        <h4 mat-line>My App</h4>
       </a>
-      <a mat-list-item routerLink="publish-story" routerLinkActive="active-list-item">
+      <a
+        mat-list-item
+        routerLink="publish-story"
+        routerLinkActive="active-list-item"
+      >
         <mat-icon mat-list-icon>vertical_align_top</mat-icon>
-        <h4 mat-line >Publish Story</h4>
+        <h4 mat-line>Publish Story</h4>
       </a>
-      <a mat-list-item routerLink="templates" routerLinkActive="active-list-item">
+      <a
+        mat-list-item
+        routerLink="templates"
+        routerLinkActive="active-list-item"
+      >
         <mat-icon mat-list-icon>view_quilt</mat-icon>
-        <h4 mat-line >Templates</h4>
+        <h4 mat-line>Templates</h4>
       </a>
-      <a mat-list-item routerLink="admin-panel" routerLinkActive="active-list-item">
+      <a
+        mat-list-item
+        routerLink="admin-panel"
+        routerLinkActive="active-list-item"
+      >
         <mat-icon mat-list-icon>build_circle</mat-icon>
-        <h4 mat-line >Admin Panel</h4>
+        <h4 mat-line>Admin Panel</h4>
       </a>
     </mat-nav-list>
   </mat-sidenav>
-  
+
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="menu-top-bar">
       <button
@@ -34,7 +49,8 @@
         aria-label="Toggle sidenav"
         *ngIf="(isHandset | async)!.matches"
         mat-icon-button
-        (click)="drawer.toggle()">
+        (click)="drawer.toggle()"
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <!-- <span>Application Title</span> -->
@@ -42,27 +58,35 @@
       <button mat-icon-button class="icon-display">
         <mat-icon>person</mat-icon>
       </button>
-      <span class="login-name">Welcome<br><span class="user-name">Paing Turner</span></span>
+      <span class="login-name"
+        >Welcome<br /><span class="user-name">Paing Turner</span></span
+      >
       <div *ngIf="(isHandset | async)!.matches ? false : true">
         <span class="fill-remaining-space">
-          <button mat-icon-button class="arrow-dropdown" [matMenuTriggerFor]="account" #menuTrigger="matMenuTrigger" (click)="menuTrigger.openMenu()">
+          <button
+            mat-icon-button
+            class="arrow-dropdown"
+            [matMenuTriggerFor]="account"
+            #menuTrigger="matMenuTrigger"
+            (click)="menuTrigger.openMenu()"
+          >
             <mat-icon>arrow_drop_down</mat-icon>
           </button>
           <mat-menu #account="matMenu" [overlapTrigger]="false">
-          <span (mouseleave)="menuTrigger.closeMenu()">
-            <button mat-menu-item>
-              <mat-icon>home</mat-icon>
-              <span>Home</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>people_outline</mat-icon>
-              <span>Connecting</span>
-            </button>
-            <button mat-menu-item>
-              <mat-icon>exit_to_app</mat-icon>
-              <span>Logout</span>
-            </button>
-          </span>
+            <span (mouseleave)="menuTrigger.closeMenu()">
+              <button mat-menu-item>
+                <mat-icon>home</mat-icon>
+                <a routerLink="my-app"><span>Home</span></a>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>people_outline</mat-icon>
+                <span>Users</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>exit_to_app</mat-icon>
+                <a routerLink="logout"><span>Logout</span></a>
+              </button>
+            </span>
           </mat-menu>
         </span>
       </div>

@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminNavComponent } from './_layouts/admin-nav/admin-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from './material.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { MyAppComponent, CustomizeAppDialog } from './my-app/my-app.component';
 import { PublishStoryComponent } from './publish-story/publish-story.component';
 import { LoginComponent } from './login/login.component';
@@ -22,6 +23,8 @@ import {
 } from './templates/templates.component';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { NgxColorsModule } from 'ngx-colors';
+import { DataTableComponent } from './shared/data-table/data-table.component';
+import { UserTableComponent } from './user-table/user-table.component';
 
 const appRoutes: Routes = [
   {
@@ -54,6 +57,8 @@ const appRoutes: Routes = [
     CustomizeTemplateDialog,
     CustomizeAppDialog,
     AssignUserRightsComponent,
+    DataTableComponent,
+    UserTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ const appRoutes: Routes = [
     MaterialModule,
     CarouselModule,
     NgxColorsModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

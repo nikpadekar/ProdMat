@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,500&display=swap");
 
 html,
 body {
@@ -6,7 +7,8 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif !important;
+  font-size: 1rem;
 }
 .main-bg-color {
   background: #f7790a;
@@ -21,10 +23,16 @@ body {
   display: flex;
 }
 .highlight-orange {
-  color: #e57c20;
+  color: #e57c20 !important;
+}
+.highlight-orange .mat-select-value {
+  color: #e57c20 !important;
 }
 .full-width-field {
   width: 100%;
+}
+.btn-custom {
+  padding: 0.3rem 0 !important;
 }
 .btn-custom-white {
   padding: 0.3rem 0 !important;
@@ -38,6 +46,13 @@ body {
 .btn-custom-white:hover {
   background: #e57c20 !important;
   color: #fff !important;
+}
+.btn-bordered {
+  background: transparent !important;
+  color: #e57c20 !important;
+  border: 2px solid #e57c20 !important;
+  border-radius: 3px !important;
+  padding: 0.3rem 0 !important;
 }
 :focus {
   outline-width: 0;
@@ -70,4 +85,20 @@ body {
 
 .template-form .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: transparent;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+  background-color: #fc7700;
+}
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+  color: #fc7700;
+}
+
+.horizontal-form .mat-form-field-label {
+  color: #fc7700 !important;
+}
+
+.auth-form .mat-form-field-appearance-fill .mat-form-field-underline::before {
+  background-color: #f0f0f0;
 }

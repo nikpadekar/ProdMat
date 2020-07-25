@@ -1,0 +1,11 @@
+.horizontal-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.horizontal-form button {
+  min-width: 9rem;
+}
+.mat-card {
+  border-radius: 0;
+}
