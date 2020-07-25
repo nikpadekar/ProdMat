@@ -1,3 +1,33 @@
-<p>
-  fourth-page works!
-</p>
+<app-assign-user-rights></app-assign-user-rights>
+<div class="mt-5"></div>
+<app-user-table></app-user-table>
+<div class="mt-5"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card>
+        <section>
+          <form class="template-form horizontal-form">
+            <div>
+              <mat-label>Application reports for</mat-label>
+              <mat-select [(value)]="appName" class="highlight-orange">
+                <mat-option value="1">News App1</mat-option>
+                <mat-option value="2">News App2</mat-option>
+                <mat-option value="3">News App3</mat-option>
+              </mat-select>
+            </div>
+          </form>
+        </section>
+        <mat-divider></mat-divider>
+        <mat-card-content class="mt-3 pt-3">
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
