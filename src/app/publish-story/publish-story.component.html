@@ -1,115 +1,132 @@
-<div class="app-container">
-  <mat-card>
-    <mat-toolbar>
-      Angular Material inside an Angular module
-    </mat-toolbar><br>
-    <mat-card-content>
-      <p>You can find here an example,<br>
-      how to use the Angular Material,<br>
-      in a independant Angular module</p>
-    </mat-card-content>
-  </mat-card><br>
-
-  <mat-card>
-    <mat-card-title>
-      Create an Angular module
-    </mat-card-title>
-    <mat-card-content>
-      <p>I called <strong>angular-material.module</strong>
-      for example.</p>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-title>
-      Packages and dependencies to install
-    </mat-card-title>
-    <mat-card-content>
-      <ul>
-    <li><strong>@angular/material</strong></li>
-    <li><strong>@angular/cdk</strong></li>
-    <li>
-      <strong>@angular/animations</strong><br>
-      This one is optionnal, needed only for components,<br>
-      that use Angular Animations<br>
-      In this case it's mandatory to add,<br>
-      <strong>BrowserAnimationsModule</strong> in
-        <strong>angular-material.module</strong>
-    </li>        
-  </ul>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-title>
-      Import angular-material components
-    </mat-card-title>
-    <mat-card-content>
-      <p>Inside <strong>Imports</strong> array, import the
-      component you want,<br>
-      then import this module inside the application module.</p>
-    </mat-card-content>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-title>
-      Include a theme
-    </mat-card-title>
-    <mat-card-content>
-      <p>Which is required for some core functions,
-      and can be added easily, by adding inside the
-      main style file the line:</p>
-    </mat-card-content>
-    <mat-card-subtitle>
-      @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-    </mat-card-subtitle>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-title>
-      Install the package HammerJS 
-    </mat-card-title>
-    <mat-card-content>
-      <p>For gesture support, for some components like the Slide
-      or the Tooltip, you can add it using a CDN also, details 
-      on the 
-      <a href="https://developers.google.com/speed/libraries/#hammerjs">
-      Link</a>. Or you can install the package and it to the project
-      dependecies, and import it then to the file <strong>main.ts</strong></p>
-    </mat-card-content>
-    <mat-card-subtitle>
-      import 'hammerjs';
-    </mat-card-subtitle>
-  </mat-card>
-
-  <mat-card>
-    <mat-card-title>
-      Material Icons 
-    </mat-card-title>
-    <mat-card-content>
-      <p>To add to the project in case you're gonna be using it,
-      only have to add the code below (link tag) to your 
-      <strong>index.html</strong> file, section head</p>
-    </mat-card-content>
-    <mat-card-subtitle>
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </mat-card-subtitle>
-  </mat-card>
-
-  <mat-card class="example-card">
-    <mat-card-title>
-      Example of use:
-    </mat-card-title>
-    <mat-card-subtitle>
-      For cards, buttons and other components
-    </mat-card-subtitle>
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Fennec Fox</mat-card-title>
-      <mat-card-subtitle>Vulpes Zerda family</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-actions>
-      <button #likeBtn mat-button>LIKE</button>
-    </mat-card-actions>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 horizontal-form">
+      <mat-form-field class="form-field-border">
+        <mat-label>Select App</mat-label>
+        <mat-select [formControl]="appSelect">
+          <mat-option *ngFor="let app of appList" [value]="app">{{
+            app
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-card class="mb-4">
+    <div class="row">
+      <div class="col-lg-12">
+        <section class="mat-flex mb-2">
+          <div class="title-center">
+            <h2>
+              Publish news details for
+              <span class="highlight-orange">NewsApp1</span>
+            </h2>
+          </div>
+          <span class="spacer"></span>
+          <button mat-button class="highlight-orange">
+            <mat-icon>zoom_in</mat-icon>
+            Zoom Screens
+          </button>
+        </section>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="row mt-5">
+          <div class="col-lg-12">
+            <section class="publish-form">
+              <form>
+                <mat-form-field class="full-width-field" appearance="legacy">
+                  <mat-label>Title</mat-label>
+                  <input matInput placeholder="Title" name="title" />
+                </mat-form-field>
+                <mat-form-field
+                  class="full-width-field mt-3"
+                  appearance="legacy"
+                >
+                  <mat-label>Short description</mat-label>
+                  <textarea
+                    matInput
+                    placeholder="Description in short.. max 250 words"
+                    max-length="255"
+                  ></textarea>
+                </mat-form-field>
+                <div class="row mt-4">
+                  <div class="col">
+                    <mat-form-field
+                      class="full-width-field"
+                      appearance="legacy"
+                    >
+                      <mat-label>Author</mat-label>
+                      <input matInput placeholder="Author" name="author" />
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field
+                      class="full-width-field"
+                      appearance="legacy"
+                    >
+                      <mat-label>URL</mat-label>
+                      <input matInput placeholder="URL" name="url" />
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-lg-6">
+                    <div class="row">
+                      <div class="col">
+                        <mat-label>Images</mat-label>
+                      </div>
+                      <div
+                        class="col-lg-12"
+                        *ngFor="let file of [0, 1, 2, 3, 4]"
+                      >
+                        <mat-form-field appearance="legacy">
+                          <ngx-mat-file-input
+                            #removableInput
+                            placeholder="Upload File"
+                            [accept]="['.jpg', '.png']"
+                          ></ngx-mat-file-input>
+                          <button
+                            mat-icon-button
+                            matSuffix
+                            *ngIf="!removableInput.empty"
+                            (click)="removableInput.clear($event)"
+                          >
+                            <mat-icon>clear</mat-icon>
+                          </button>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6"></div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <section class="footer-section btn-group">
+              <button mat-flat-button color="orange" class="btn-custom">
+                Publish
+              </button>
+              <button
+                mat-flat-button
+                color="orange"
+                class="btn-custom btn-bordered"
+              >
+                Clear
+              </button>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="image-container">
+          <img src="https://dummyimage.com/300x550" class="img-responsive" />
+        </div>
+      </div>
+    </div>
   </mat-card>
 </div>

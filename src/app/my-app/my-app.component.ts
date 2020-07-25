@@ -17,7 +17,7 @@ export class MyAppComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(CustomizeAppDialog, {
-      data: { index: '5', name: '', animal: '' },
+      data: { index: '5', name: '' },
     });
 
     dialogRef.afterClosed().subscribe((result) => {

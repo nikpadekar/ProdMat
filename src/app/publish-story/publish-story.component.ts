@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-publish-story',
   templateUrl: './publish-story.component.html',
-  styleUrls: ['./publish-story.component.css']
+  styleUrls: ['./publish-story.component.css'],
 })
 export class PublishStoryComponent implements OnInit {
-  slides = [{'image': 'https://gsr.dev/material2-carousel/assets/demo.png'}, {'image': 'https://gsr.dev/material2-carousel/assets/demo.png'},{'image': 'https://gsr.dev/material2-carousel/assets/demo.png'}, {'image': 'https://gsr.dev/material2-carousel/assets/demo.png'}, {'image': 'https://gsr.dev/material2-carousel/assets/demo.png'}];
-
-  constructor() { }
-
-  ngOnInit() {
-    
-  }
-
+  constructor() {}
+  ngOnInit() {}
+  appSelect = new FormControl();
+  appList: string[] = ['App1', 'App2'];
 }

@@ -95,10 +95,26 @@ body {
   color: #fc7700;
 }
 
-.horizontal-form .mat-form-field-label {
+.horizontal-form .mat-form-field-label,
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
   color: #fc7700 !important;
 }
+.horizontal-form .mat-form-field.mat-focused .mat-form-field-ripple {
+  background-color: #fc7700 !important;
+}
 
-.auth-form .mat-form-field-appearance-fill .mat-form-field-underline::before {
+.auth-form .mat-form-field-appearance-fill .mat-form-field-underline::before,
+.auth-form .mat-form-field.mat-focused .mat-form-field-ripple {
   background-color: #f0f0f0;
+}
+
+/* input with custom border all side */
+.form-field-border .mat-form-field-flex {
+  border: 1px solid #ced4da;
+  border-radius: 0 !important;
+}
+.form-field-border
+  .mat-form-field-appearance-fill
+  .mat-form-field-underline::before {
+  background: transparent !important;
 }
