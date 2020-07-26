@@ -18,6 +18,11 @@
             {{ element[tableData] }}
           </td>
         </ng-container>
+        <ng-container *ngFor="let column of tableActions" [matColumnDef]="tableActions">
+          <td mat-cell *matCellDef="let element">
+            "dsfds" 
+          </td>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="objectKeys(columnHeader)"></tr>
         <tr
           mat-row
