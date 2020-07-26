@@ -9,3 +9,9 @@
 .mat-card {
   border-radius: 0;
 }
+
+.btn-css {
+  border: 2px solid #e57c20 !important;
+  border-radius: 3px !important;
+  width: 48%;
+}
