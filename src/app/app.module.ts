@@ -25,6 +25,8 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 import { NgxColorsModule } from 'ngx-colors';
 import { DataTableComponent } from './shared/data-table/data-table.component';
 import { UserTableComponent } from './user-table/user-table.component';
+import { TreeChecklistComponent } from './publish-story/tree-checklist/tree-checklist.component';
+import { MatTreeModule } from '@angular/material/tree';
 import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 const appRoutes: Routes = [
@@ -60,6 +62,7 @@ const appRoutes: Routes = [
     AssignUserRightsComponent,
     DataTableComponent,
     UserTableComponent,
+    TreeChecklistComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +73,7 @@ const appRoutes: Routes = [
     CarouselModule,
     NgxColorsModule,
     MatPaginatorModule,
+    MatTreeModule,
     MaterialFileInputModule
   ],
   providers: [
