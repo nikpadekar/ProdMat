@@ -125,3 +125,16 @@ body {
 .paginator .mat-form-field-appearance-fill .mat-form-field-flex {
   background-color: transparent !important;
 }
+
+.tree-chart-category {
+  min-width: 400px;
+  max-height: 80vh;
+  min-height: 30vh;
+}
+
+mat-checkbox > label {
+  margin-bottom: 0;
+}
+.tree-search-field > div{
+padding: 0;
+}
