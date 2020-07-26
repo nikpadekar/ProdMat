@@ -29,9 +29,13 @@
 }
 
 .btn-category-action {
+    display : none;
     transform: scale(0.8);
 }
 
 .btn-category-action.delete {
     margin-left: -10px;
 }
+.category-node:hover .btn-category-action {
+    display: inline-block;
+  }
