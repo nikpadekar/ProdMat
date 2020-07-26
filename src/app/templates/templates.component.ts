@@ -31,8 +31,8 @@ export class TemplatesComponent implements OnInit {
   styleUrls: ['./customize-template/customize-template.css'],
 })
 export class CustomizeTemplateDialog implements OnInit {
-  colorValue1 = '';
-  colorValue2 = '';
+  colorValue1 = '#ffffff';
+  colorValue2 = '#039be5';
   constructor(
     public dialogRef: MatDialogRef<CustomizeTemplateDialog>,
     @Inject(MAT_DIALOG_DATA) public data
@@ -44,5 +44,8 @@ export class CustomizeTemplateDialog implements OnInit {
 
   onClose(): void {
     this.dialogRef.close();
+  }
+
+  colorEvent(color) {
   }
 }

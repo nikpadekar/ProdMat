@@ -118,3 +118,6 @@ body {
   .mat-form-field-underline::before {
   background: transparent !important;
 }
+.color-input-box {
+  line-height: 0px;
+}
