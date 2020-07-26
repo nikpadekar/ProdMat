@@ -33,6 +33,7 @@ body {
 }
 .btn-custom {
   padding: 0.3rem 0 !important;
+  min-width: 80px !important;
 }
 .btn-custom-white {
   padding: 0.3rem 0 !important;
@@ -135,6 +136,15 @@ body {
 mat-checkbox > label {
   margin-bottom: 0;
 }
-.tree-search-field > div{
-padding: 0;
+.tree-search-field > div {
+  padding: 0;
+}
+
+.custom-input .custom-icon {
+  position: absolute;
+  top: -10px;
+  right: 0;
+}
+.custom-input {
+  width: 100%;
 }

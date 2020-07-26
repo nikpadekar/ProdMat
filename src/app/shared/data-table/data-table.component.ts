@@ -17,7 +17,6 @@ export class DataTableComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngOnInit() {
-    console.log(this.tableData);
     this.tableData.concat(this.tableActions);
     this.dataSource = new MatTableDataSource(this.tableData);
     this.dataSource.paginator = this.paginator;
