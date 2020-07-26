@@ -17,7 +17,7 @@ export class MyAppComponent implements OnInit {
 
   openDialog() {
     const dialogRef = this.dialog.open(CustomizeAppDialog, {
-      data: { index: '5', name: '', animal: '' },
+      data: { index: '5', colorValue1: '#ffffff', colorValue2: '#039be5' },
     });
 
     dialogRef.afterClosed().subscribe((result) => {
@@ -33,7 +33,7 @@ export class MyAppComponent implements OnInit {
 })
 export class CustomizeAppDialog implements OnInit {
   colorValue1 = '#ffffff';
-  colorValue2 = '#FF0000';
+  colorValue2 = '#039be5';
   constructor(
     public dialogRef: MatDialogRef<CustomizeAppDialog>,
     @Inject(MAT_DIALOG_DATA) public data
@@ -46,4 +46,8 @@ export class CustomizeAppDialog implements OnInit {
   onClose(): void {
     this.dialogRef.close();
   }
+
+  colorEvent(color) {
+  }
+  
 }

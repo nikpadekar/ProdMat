@@ -12,7 +12,11 @@ export class DataTableComponent implements OnInit {
   @Input() columnHeader;
   objectKeys = Object.keys;
   dataSource;
-
+  tableActions = [
+    { name : "EDIT", icon : "" },
+    { name : "EDIT", icon : "" },
+    { name : "EDIT", icon : "" }
+  ];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   ngOnInit() {
