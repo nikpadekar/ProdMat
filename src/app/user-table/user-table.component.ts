@@ -17,16 +17,6 @@ export class UserTableComponent implements OnInit {
 
   ngOnInit() {}
 
-  checkHeader(data) {
-    if (data == 'studentID') {
-      console.log('stud');
-      return 'Student ID';
-    } else {
-      console.log('false');
-      return 'INVALID DATA';
-    }
-  }
-
   columnHeader = {
     appName: 'App',
     users: 'Users',

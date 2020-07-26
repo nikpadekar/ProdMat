@@ -129,4 +129,25 @@
       </div>
     </div>
   </mat-card>
+  <mat-card>
+    <div class="row">
+      <div class="col-lg-12 title-center">
+        <h2>
+          Publish news details for
+          <span class="highlight-orange">NewsApp1</span>
+        </h2>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row mt-4">
+      <div class="col-lg-12">
+        <app-data-table
+          [tableData]="tableData"
+          [columnHeader]="columnHeader"
+          [tableActions]="tableActions"
+          (action)="actionFunction($event)"
+        ></app-data-table>
+      </div>
+    </div>
+  </mat-card>
 </div>

@@ -97,10 +97,10 @@ body {
 
 .horizontal-form .mat-form-field-label,
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
-  color: #fc7700 !important;
+  color: #deac30 !important;
 }
 .horizontal-form .mat-form-field.mat-focused .mat-form-field-ripple {
-  background-color: #fc7700 !important;
+  background-color: #deac30 !important;
 }
 
 .auth-form .mat-form-field-appearance-fill .mat-form-field-underline::before,
@@ -120,4 +120,8 @@ body {
 }
 .color-input-box {
   line-height: 0px;
+}
+
+.paginator .mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: transparent !important;
 }
