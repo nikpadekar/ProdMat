@@ -251,11 +251,11 @@ export class TreeChecklistComponent {
   getParentNode(node: TodoItemFlatNode): TodoItemFlatNode | null {
     const currentLevel = this.getLevel(node);
 
-    // if (currentLevel < 1) {
-    //   return null;
-    // }
+    if (currentLevel < 1) {
+      return null;
+    }
 
-    const startIndex = (this.treeControl.dataNodes.indexOf(node) - 1) || 0;
+    const startIndex = (this.treeControl.dataNodes.indexOf(node) - 1);
 
     for (let i = startIndex; i >= 0; i--) {
       const currentNode = this.treeControl.dataNodes[i];
