@@ -48,9 +48,10 @@
                   <textarea
                     matInput
                     placeholder="Description in short.. max 250 words"
-                    max-length="255"
+                    maxlength="255"
                   ></textarea>
                 </mat-form-field>
+                <p class="text-secondary text-right">0/250</p>
                 <div class="row mt-4">
                   <div class="col">
                     <mat-form-field
@@ -126,6 +127,27 @@
         <div class="image-container">
           <img src="https://dummyimage.com/300x550" class="img-responsive" />
         </div>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card>
+    <div class="row">
+      <div class="col-lg-12 title-center">
+        <h2>
+          Publish news details for
+          <span class="highlight-orange">NewsApp1</span>
+        </h2>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="row mt-4">
+      <div class="col-lg-12">
+        <app-data-table
+          [tableData]="tableData"
+          [columnHeader]="columnHeader"
+          [tableActions]="tableActions"
+          (action)="actionFunction($event)"
+        ></app-data-table>
       </div>
     </div>
   </mat-card>
