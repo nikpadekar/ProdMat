@@ -1,3 +1,7 @@
 .mat-card {
   border-radius: 0;
 }
+.img-responsive {
+  width: auto;
+  height: 100%;
+}
