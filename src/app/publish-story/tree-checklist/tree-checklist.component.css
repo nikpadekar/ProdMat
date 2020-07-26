@@ -1,3 +1,37 @@
 .mat-form-field {
     margin-right: 4px;
 }
+.title-center {
+    font-weight: 500;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-container {
+    padding: 16px 0;
+}
+.image-carousel {
+    display: block;
+    height:auto;
+    width: 100%;
+}
+.footer-section button{
+    margin-left: .5rem;
+    margin-top: .5rem;
+}
+.full-width {
+    width: 100%;
+}
+.close-icon {
+    margin-top: -20px;
+    margin-right: -10px;
+}
+
+.btn-category-action {
+    transform: scale(0.8);
+}
+
+.btn-category-action.delete {
+    margin-left: -10px;
+}

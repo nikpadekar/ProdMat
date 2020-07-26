@@ -1,5 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { TreeChecklistComponent } from './tree-checklist/tree-checklist.component';
+import { MatDialog } from '@angular/material/dialog';
 
 export interface userTableData {
   dateTime: string;
@@ -13,7 +15,7 @@ export interface userTableData {
   styleUrls: ['./publish-story.component.css'],
 })
 export class PublishStoryComponent implements OnInit {
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
   ngOnInit() {}
   appSelect = new FormControl();
   appList: string[] = ['App1', 'App2'];
@@ -89,5 +91,13 @@ export class PublishStoryComponent implements OnInit {
     console.log(actionEvent.index);
     console.log(actionEvent.action);
     console.log(actionEvent.row);
+  }
+  
+  openDialog() {
+    const dialogRef = this.dialog.open(TreeChecklistComponent);
+  
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }

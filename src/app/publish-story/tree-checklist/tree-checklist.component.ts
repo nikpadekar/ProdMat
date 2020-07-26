@@ -1,8 +1,9 @@
 import {SelectionModel} from '@angular/cdk/collections';
 import {FlatTreeControl} from '@angular/cdk/tree';
-import {Component, Injectable} from '@angular/core';
+import {Component, Injectable, Inject} from '@angular/core';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 import {BehaviorSubject} from 'rxjs';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 /**
  * Node for to-do item
@@ -98,6 +99,14 @@ export class ChecklistDatabase {
     node.item = name;
     this.dataChange.next(this.data);
   }
+
+  deleteItem(parent: TodoItemNode, name: string): void {
+    if (parent.children) {
+      parent.children = parent.children.filter(c => c.item !== name);
+      this.dataChange.next(this.data);
+    }
+
+  }
 }
 
 /**
@@ -110,6 +119,13 @@ export class ChecklistDatabase {
   providers: [ChecklistDatabase]
 })
 export class TreeChecklistComponent {
+
+  onClose(): void {
+    this.dialogRef.close();
+  }
+
+  colorEvent(color) {
+  }
   /** Map from flat node to nested node. This helps us finding the nested node to be modified */
   flatNodeMap = new Map<TodoItemFlatNode, TodoItemNode>();
 
@@ -131,7 +147,10 @@ export class TreeChecklistComponent {
   /** The selection for checklist */
   checklistSelection = new SelectionModel<TodoItemFlatNode>(true /* multiple */);
 
-  constructor(private _database: ChecklistDatabase) {
+  constructor(
+    public dialogRef: MatDialogRef<TreeChecklistComponent>,
+    @Inject(MAT_DIALOG_DATA) public data,
+    private _database: ChecklistDatabase) {
     this.treeFlattener = new MatTreeFlattener(this.transformer, this.getLevel,
       this.isExpandable, this.getChildren);
     this.treeControl = new FlatTreeControl<TodoItemFlatNode>(this.getLevel, this.isExpandable);
@@ -236,7 +255,7 @@ export class TreeChecklistComponent {
       return null;
     }
 
-    const startIndex = this.treeControl.dataNodes.indexOf(node) - 1;
+    const startIndex = (this.treeControl.dataNodes.indexOf(node) - 1);
 
     for (let i = startIndex; i >= 0; i--) {
       const currentNode = this.treeControl.dataNodes[i];
@@ -258,6 +277,19 @@ export class TreeChecklistComponent {
   /** Save the node to database */
   saveNode(node: TodoItemFlatNode, itemValue: string) {
     const nestedNode = this.flatNodeMap.get(node);
-    this._database.updateItem(nestedNode!, itemValue);
+    this._database.insertItem(nestedNode!, itemValue);
+  }
+
+  public deleteItem(node: TodoItemFlatNode): void {
+
+    // Get the parent node of the selected child node
+    const parentNode = this.getParentNode(node) || node;
+
+    // Map from flat node to nested node.
+    const parentFlat = this.flatNodeMap.get(parentNode);
+
+    this._database.deleteItem(parentFlat!, node.item);
+    this.treeControl.expand(node);
+
   }
 }
