@@ -5,7 +5,6 @@ export interface userTableData {
   appName: string;
   users: string;
   userRole: string;
-  tableActions : Array<object>;
 }
 
 @Component({
@@ -36,9 +35,8 @@ export class UserTableComponent implements OnInit {
   };
 
   tableActions = [
-    { name : "EDIT", icon : "" },
-    { name : "EDIT", icon : "" },
-    { name : "EDIT", icon : "" }
+    { name : "EDIT", icon : "create" },
+    { name : "DELETE", icon : "delete" }
   ];
 
   tableData: userTableData[] = [
@@ -46,61 +44,58 @@ export class UserTableComponent implements OnInit {
       appName: 'App 1',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 2',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 3',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 4',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 5',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 6',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 7',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 8',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 9',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
     {
       appName: 'App 10',
       users: 'Darrell Goodwin, Terrance Peters, Beatrice Burton, DerekDunn',
       userRole: 'Admin, Publisher, Creator',
-      tableActions : this.tableActions
     },
   ];
+
+  actionFunction(actionEvent){
+    console.log(actionEvent.event)
+    console.log(actionEvent.index)
+    console.log(actionEvent.action)
+    console.log(actionEvent.row)
+  }
 }
