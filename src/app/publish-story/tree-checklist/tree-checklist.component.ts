@@ -100,10 +100,13 @@ export class ChecklistDatabase {
     this.dataChange.next(this.data);
   }
 
-  deleteItem(parent: TodoItemNode, name: string): void {
-    if (parent.children) {
-      parent.children = parent.children.filter(c => c.item !== name);
+  deleteItem(parent: TodoItemNode, node: any): void {
+    if (parent.children && (node.level != 0 )) {
+      parent.children = parent.children.filter(c => c.item !== node.item);
       this.dataChange.next(this.data);
+    } else if(node.level == 0 ){
+      let data = this.data.filter(c => c.item !== node.item);
+      this.dataChange.next(data);
     }
 
   }
@@ -276,8 +279,11 @@ export class TreeChecklistComponent {
 
   /** Save the node to database */
   saveNode(node: TodoItemFlatNode, itemValue: string) {
-    const nestedNode = this.flatNodeMap.get(node);
-    this._database.insertItem(nestedNode!, itemValue);
+    if(itemValue != ""){
+      const nestedNode = this.flatNodeMap.get(node);
+      this._database.insertItem(nestedNode!, itemValue);
+      this.treeControl.expand(node);
+    }
   }
 
   public deleteItem(node: TodoItemFlatNode): void {
@@ -288,7 +294,7 @@ export class TreeChecklistComponent {
     // Map from flat node to nested node.
     const parentFlat = this.flatNodeMap.get(parentNode);
 
-    this._database.deleteItem(parentFlat!, node.item);
+    this._database.deleteItem(parentFlat!, node);
     this.treeControl.expand(node);
 
   }
