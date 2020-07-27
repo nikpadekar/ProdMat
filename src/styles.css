@@ -97,6 +97,7 @@ body {
 }
 
 .horizontal-form .mat-form-field-label,
+.horizontal-form mat-label,
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
   color: #deac30 !important;
 }
@@ -150,4 +151,15 @@ mat-checkbox > label {
 }
 .mat-form-field-appearance-fill .mat-form-field-flex {
   background: transparent !important;
+}
+
+.mat-stroked-button {
+  border: 1px solid #e57c20 !important;
+  color: #e57c20 !important;
+  background-color: transparent !important;
+  box-shadow: none;
+}
+
+.tree-chart-category .mat-checkbox-frame {
+  border-radius: 0 !important;
 }

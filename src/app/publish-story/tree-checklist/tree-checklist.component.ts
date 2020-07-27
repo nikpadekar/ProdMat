@@ -296,6 +296,9 @@ export class TreeChecklistComponent {
 
     this._database.deleteItem(parentFlat!, node);
     this.treeControl.expand(node);
-
+  }
+  getTest(obj){
+    
+    console.log(this.getLevel(obj))
   }
 }
