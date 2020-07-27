@@ -49,10 +49,11 @@
                     matInput
                     #test
                     placeholder="Description in short.. max 250 words"
-                    maxlength="255"
+                    maxlength="250"
+                    #paraText
                   ></textarea>
                 </mat-form-field>
-                <p class="text-secondary text-right">{{ 0 }}/250</p>
+                <p class="text-secondary text-right">{{getParaLength(paraText)}}</p>
                 <div class="row mt-4">
                   <div class="col">
                     <mat-form-field
