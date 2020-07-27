@@ -97,7 +97,7 @@ body {
 }
 
 .horizontal-form .mat-form-field-label,
-.horizontal-form mat-label,
+.horizontal-form .label-highlight,
 .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
   color: #deac30 !important;
 }
