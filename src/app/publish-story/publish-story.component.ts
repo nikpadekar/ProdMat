@@ -19,7 +19,6 @@ export class PublishStoryComponent implements OnInit {
   ngOnInit() {}
   appSelect = new FormControl();
   appList: string[] = ['App1', 'App2'];
-  paraText =""
   columnHeader = {
     dateTime: 'Date Time',
     title: 'Title',
