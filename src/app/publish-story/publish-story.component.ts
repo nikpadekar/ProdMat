@@ -19,7 +19,7 @@ export class PublishStoryComponent implements OnInit {
   ngOnInit() {}
   appSelect = new FormControl();
   appList: string[] = ['App1', 'App2'];
-
+  paraText =""
   columnHeader = {
     dateTime: 'Date Time',
     title: 'Title',
@@ -99,5 +99,8 @@ export class PublishStoryComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  getParaLength(paraText){
+    return paraText.textLength + "/250"
   }
 }
