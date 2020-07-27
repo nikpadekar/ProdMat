@@ -35,7 +35,7 @@
         <div class="row mt-5">
           <div class="col-lg-12">
             <section class="publish-form">
-              <form>
+              <form class="horizontal-form">
                 <mat-form-field class="full-width-field" appearance="legacy">
                   <mat-label>Title</mat-label>
                   <input matInput placeholder="Title" name="title" />
@@ -47,6 +47,7 @@
                   <mat-label>Short description</mat-label>
                   <textarea
                     matInput
+                    #test
                     placeholder="Description in short.. max 250 words"
                     maxlength="250"
                     #paraText
@@ -105,13 +106,15 @@
                     <div class="row">
                       <div class="col-lg-12">
                         <mat-label>Categories</mat-label>
-                        <mat-form-field class="custom-input">
+                        <mat-form-field class="custom-input" appearance="fill">
                           <input
                             matInput
                             name="categories"
                             (click)="openDialog()"
                           />
-                          <mat-icon matSuffix>qr_code</mat-icon>
+                          <mat-icon matSuffix (click)="openDialog()">
+                            qr_code</mat-icon
+                          >
                         </mat-form-field>
                       </div>
                     </div>
@@ -122,15 +125,18 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-4">
-            <button mat-flat-button color="orange" class="btn-custom">
+          <div class="col-sm-12 text-right">
+            <button
+              type="submit"
+              mat-flat-button
+              id="btn1"
+              name="btn1"
+              class="mat-orange"
+            >
               Publish
             </button>
-            <button
-              mat-flat-button
-              color="orange"
-              class="btn-custom btn-bordered"
-            >
+            &nbsp;
+            <button mat-stroked-button id="btn2" name="btn2">
               Clear
             </button>
           </div>

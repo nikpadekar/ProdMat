@@ -14,8 +14,18 @@
               </mat-form-field>
               <mat-form-field class="full-width-field">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password" name="password" />
-                <mat-icon matSuffix>remove_red_eye</mat-icon>
+                <input matInput [type]="hide ? 'password' : 'text'" />
+                <button
+                  mat-icon-button
+                  matSuffix
+                  (click)="hide = !hide"
+                  [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide"
+                >
+                  <mat-icon>{{
+                    hide ? "visibility_off" : "visibility"
+                  }}</mat-icon>
+                </button>
               </mat-form-field>
             </form>
           </mat-card-content>
@@ -33,7 +43,9 @@
           </div>
           <div class="row">
             <div class="col-md-6 text-left">
-              <a [routerLink]="['/forgot-password']" class="theme-link">Forgot Password?</a>
+              <a [routerLink]="['/forgot-password']" class="theme-link"
+                >Forgot Password?</a
+              >
             </div>
             <div class="col-md-6 text-right">
               <a [routerLink]="['/signup']" class="theme-link">New User?</a>
